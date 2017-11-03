@@ -1,7 +1,7 @@
 module PathToEnlightenment exposing (koans, suite)
 
-import Koan01AboutPrimitives
-import Koan02AboutComposition
+import Koans01AboutPrimitives
+import Koans02AboutComposition
 import Test as ElmTest
 import Utils.Test as KoansTest
 
@@ -20,8 +20,8 @@ import Utils.Test as KoansTest
 -}
 koans : List KoansTest.Test
 koans =
-    [ Koan01AboutPrimitives.suite
-    , Koan02AboutComposition.suite
+    [ Koans01AboutPrimitives.suite
+    , Koans02AboutComposition.suite
     ]
 
 

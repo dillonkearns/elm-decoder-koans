@@ -1,4 +1,4 @@
-module Koan02AboutComposition exposing (suite)
+module Koans02AboutComposition exposing (suite)
 
 {-
    Hint: you may need some parentheses when you replace the blankDecoder in these

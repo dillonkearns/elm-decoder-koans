@@ -1,4 +1,4 @@
-module Koan01AboutPrimitives exposing (suite)
+module Koans01AboutPrimitives exposing (suite)
 
 {-
    The goal is to make all the tests pass one at a time
