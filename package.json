@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Elm Decoder Koans",
   "scripts": {
-    "start": "elm-live tests/Main.elm --open",
+    "start": "elm-live Main.elm --open",
     "test": "elm-test",
     "test-watch": "elm-test --watch"
   },

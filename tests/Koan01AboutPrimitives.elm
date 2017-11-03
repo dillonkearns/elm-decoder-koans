@@ -6,7 +6,7 @@ module Koan01AboutPrimitives exposing (suite)
    package: http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode
 -}
 
-import Helpers exposing (blankDecoder, testDecodesTo)
+import Helpers exposing (blankDecoder, expectDecodesTo, me____x, testDecodesTo, x____replace)
 import Json.Decode as Decode
 import Utils.Test exposing (Test, describe, test)
 
@@ -14,24 +14,20 @@ import Utils.Test exposing (Test, describe, test)
 suite : Test
 suite =
     describe "About Primitives"
-        [ testDecodesTo
-            "You can parse primitive json types with primitive decoders like Decode.int"
-            blankDecoder
-            "123"
-            123
-        , testDecodesTo
-            "You can also parse Bools with Decode.bool"
-            blankDecoder
-            "true"
-            True
-        , testDecodesTo
-            "Or Floats with Decode.float"
-            blankDecoder
-            "123.456"
-            123.456
-        , testDecodesTo
-            "Strings are valid JSON and parse with Decode.string"
-            blankDecoder
-            "\"Hello\""
-            "Hello"
+        [ test "You can parse primitive json types with primitive decoders like Decode.int" <|
+            \_ ->
+                x____replace me____x
+                    |> expectDecodesTo Decode.int "123"
+        , test "You can also parse Bools with Decode.bool" <|
+            \_ ->
+                True
+                    |> expectDecodesTo blankDecoder "true"
+        , test "Or Floats with Decode.float" <|
+            \_ ->
+                123.456
+                    |> expectDecodesTo blankDecoder "123.456"
+        , test "Strings are valid JSON and parse with Decode.string" <|
+            \_ ->
+                "Hello"
+                    |> expectDecodesTo blankDecoder "\"Hello\""
         ]
