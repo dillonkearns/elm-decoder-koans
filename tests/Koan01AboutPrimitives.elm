@@ -8,7 +8,7 @@ module Koan01AboutPrimitives exposing (suite)
 
 import Helpers exposing (blankDecoder, testDecodesTo)
 import Json.Decode as Decode
-import Test exposing (Test, describe, test)
+import Utils.Test exposing (Test, describe, test)
 
 
 suite : Test
@@ -16,22 +16,22 @@ suite =
     describe "About Primitives"
         [ testDecodesTo
             "You can parse primitive json types with primitive decoders like Decode.int"
-            Decode.int
+            blankDecoder
             "123"
             123
         , testDecodesTo
             "You can also parse Bools with Decode.bool"
-            Decode.bool
+            blankDecoder
             "true"
             True
         , testDecodesTo
             "Or Floats with Decode.float"
-            Decode.float
+            blankDecoder
             "123.456"
             123.456
         , testDecodesTo
             "Strings are valid JSON and parse with Decode.string"
-            Decode.string
+            blankDecoder
             "\"Hello\""
             "Hello"
         ]

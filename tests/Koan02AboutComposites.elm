@@ -9,7 +9,7 @@ module Koan02AboutComposites exposing (suite)
 
 import Helpers exposing (blankDecoder, testDecodesTo)
 import Json.Decode as Decode
-import Test exposing (Test, describe, test)
+import Utils.Test exposing (Test, describe, test)
 
 
 suite : Test

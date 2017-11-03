@@ -2,12 +2,13 @@ module Helpers exposing (blankDecoder, testDecodesTo)
 
 import Expect
 import Json.Decode as Decode
-import Test exposing (Test, describe, test)
+import Utils.Test as Test exposing (Test, describe, test)
 
 
 blankDecoder : Decode.Decoder a
 blankDecoder =
-    Decode.fail "Fill in the blankDecoder to make this test pass."
+    -- Decode.fail "Fill in the blankDecoder to make this test pass."
+    Decode.andThen (\a -> Debug.crash "Fill in the blank") (Decode.succeed "")
 
 
 testDecodesTo : String -> Decode.Decoder a -> String -> a -> Test
