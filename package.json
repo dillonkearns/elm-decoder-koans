@@ -1,0 +1,18 @@
+{
+  "name": "elm-decoder-koans",
+  "version": "1.0.0",
+  "description": "Elm Decoder Koans",
+  "scripts": {
+    "start": "elm-live tests/Main.elm --open",
+    "test": "elm-test",
+    "test-watch": "elm-test --watch"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/dillonkearns/elm-decoder-koans",
+  "author": "Dillon Kearns <dillon@dillonkearns.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "elm-live": "^2.7.4",
+    "elm-test": "^0.18.7"
+  }
+}
