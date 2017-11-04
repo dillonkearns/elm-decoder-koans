@@ -14,7 +14,7 @@ me____x =
     Blank
 
 
-x____replace : FILL_ME_IN -> a
+x____replace : a -> b
 x____replace _ =
     Debug.crash "FILL IN THE BLANK"
 

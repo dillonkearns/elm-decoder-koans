@@ -2,6 +2,7 @@ module PathToEnlightenment exposing (koans, suite)
 
 import Koans01AboutPrimitives
 import Koans02AboutComposition
+import Koans03AboutMapping
 import Test as ElmTest
 import Utils.Test as KoansTest
 
@@ -22,6 +23,7 @@ koans : List KoansTest.Test
 koans =
     [ Koans01AboutPrimitives.suite
     , Koans02AboutComposition.suite
+    , Koans03AboutMapping.suite
     ]
 
 
