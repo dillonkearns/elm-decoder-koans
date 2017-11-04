@@ -3,7 +3,8 @@ module Koans01AboutPrimitives exposing (suite)
 {-
    The goal is to make all the tests pass one at a time
    by replacing each `blankDecoder` by building up a decoder from the Json.Decode
-   package: http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode
+   package. See:
+   http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode#primitives
 -}
 
 import Helpers exposing (blankDecoder, expectDecodesTo, me____x, testDecodesTo, x____replace)
