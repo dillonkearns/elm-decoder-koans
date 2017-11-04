@@ -3,6 +3,7 @@ module PathToEnlightenment exposing (koans, suite)
 import Koans01AboutPrimitives
 import Koans02AboutComposition
 import Koans03AboutMapping
+import Koans04AboutFields
 import Test as ElmTest
 import Utils.Test as KoansTest
 
@@ -24,6 +25,7 @@ koans =
     [ Koans01AboutPrimitives.suite
     , Koans02AboutComposition.suite
     , Koans03AboutMapping.suite
+    , Koans04AboutFields.suite
     ]
 
 
