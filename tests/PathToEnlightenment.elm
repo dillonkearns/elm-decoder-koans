@@ -4,6 +4,7 @@ import Koans01AboutPrimitives
 import Koans02AboutComposition
 import Koans03AboutMapping
 import Koans04AboutFields
+import Koans05AboutMultipleFields
 import Test as ElmTest
 import Utils.Test as KoansTest
 
@@ -26,6 +27,7 @@ koans =
     , Koans02AboutComposition.suite
     , Koans03AboutMapping.suite
     , Koans04AboutFields.suite
+    , Koans05AboutMultipleFields.suite
     ]
 
 
