@@ -14,7 +14,7 @@ import Utils.Test exposing (Test, describe, test)
 
 suite : Test
 suite =
-    describe "About Primitives"
+    describe "About Mapping"
         [ test "Decode.map performs a transformation" <|
             \_ ->
                 x____replace me____x

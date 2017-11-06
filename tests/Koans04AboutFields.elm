@@ -12,7 +12,7 @@ import Utils.Test exposing (Test, describe, test)
 
 suite : Test
 suite =
-    describe "About Primitives"
+    describe "About Fields"
         [ test "Decode.field accesses a field within a JSON object" <|
             \_ ->
                 x____replace me____x
