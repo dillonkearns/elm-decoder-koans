@@ -97,6 +97,18 @@ view model =
 
 viewRunner : Final -> List KoansTest.Event -> Html msg
 viewRunner final seen =
+    let
+        flashClass =
+            case final of
+                InProgress ->
+                    ""
+
+                Finished ->
+                    "passed"
+
+                Failed failureKoansTest ->
+                    "failed"
+    in
     pre
         [ style
             [ ( "background-color", "#EEEEEE" )
@@ -156,7 +168,8 @@ viewFinal final =
 
         Failed { given, message } ->
             [ b
-                [ style [ ( "color", "#D5200C" ) ]
+                [ class "failed"
+                , style [ ( "color", "#D5200C" ) ]
                 ]
                 [ text "✗\n\n"
                 , text <|
@@ -192,7 +205,9 @@ terminalText sectionBreak events =
                 :: []
 
         (KoansTest.Run description _) :: rest ->
-            text ("\n" ++ description ++ " ✔")
+            span [ class "passed" ]
+                [ text ("\n" ++ description ++ " ✔")
+                ]
                 :: terminalText largeBreak rest
 
 

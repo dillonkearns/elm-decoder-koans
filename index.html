@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Elm Decoder Koans</title>
+  <script type="text/javascript" src="./elm.js"></script>
+  <style>
+    .passed {
+    	animation: pass ease-out 2.5s;
+    }
+    @keyframes pass {
+  	0% { background-color: rgba(77, 209, 0, 0); }
+  	50% { background-color: rgba(75, 175, 0, 5); }
+  	100% { background-color: rgba(77, 209, 0, 0); }
+    }
+
+    .failed {
+      animation: fail ease-out 2.5s;
+    }
+    @keyframes fail {
+      0% { background-color: rgba(77, 209, 0, 0); opactiy: 1; }
+      50% { background-color: rgba(125, 25, 0, 50); }
+      100% { background-color: rgba(77, 209, 0, 0); }
+    }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script src="./elm.js"></script>
+    <script>Elm.Main.embed(document.querySelector("div"))</script>
+  </body>
+</html>
