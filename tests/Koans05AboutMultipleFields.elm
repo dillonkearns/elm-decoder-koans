@@ -58,7 +58,7 @@ suite =
                             (Decode.field "last" Decode.string)
                         )
                         """{ "first": "Beverly", "last": "Crusher" }"""
-        , test "Decode.map3, 4, and all the way up to 8 are available" <|
+        , test "Decode.map3 is also available" <|
             \_ ->
                 x____replace me____x
                     |> expectDecodesTo
@@ -68,4 +68,19 @@ suite =
                             (Decode.field "last" Decode.string)
                         )
                         """{ "first": "William", "middle": "Thomas", "last": "Riker" }"""
+        , test "You can even use Decode.map4 (and all the way up to map8)" <|
+            \_ ->
+                { a = 1, b = 2, c = 3, d = 4 }
+                    |> expectDecodesTo
+                        (Decode.map4 FourThings
+                            (Decode.field "a" Decode.int)
+                            (Decode.field "b" Decode.int)
+                            (Decode.field "c" Decode.int)
+                            (Decode.field "d" Decode.int)
+                        )
+                        """{ "a": 1, "b": 2, "c": 3, "d": 4 }"""
         ]
+
+
+type alias FourThings =
+    { a : Int, b : Int, c : Int, d : Int }
