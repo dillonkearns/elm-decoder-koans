@@ -5,6 +5,7 @@ import Koans02AboutComposition
 import Koans03AboutMapping
 import Koans04AboutFields
 import Koans05AboutMultipleFields
+import Koans06AboutDecodePipeline
 import Test as ElmTest
 import Utils.Test as KoansTest
 
@@ -28,6 +29,7 @@ koans =
     , Koans03AboutMapping.suite
     , Koans04AboutFields.suite
     , Koans05AboutMultipleFields.suite
+    , Koans06AboutDecodePipeline.suite
     ]
 
 
