@@ -23,10 +23,10 @@
       100% { background-color: rgba(77, 209, 0, 0); }
     }
     </style>
-  </head>
-  <body>
-    <div></div>
-    <script src="./elm.js"></script>
-    <script>Elm.Main.embed(document.querySelector("div"))</script>
-  </body>
+</head>
+<body>
+<div></div>
+<script src="./elm.js"></script>
+<script>Elm.Main.init({ node: document.querySelector("div") })</script>
+</body>
 </html>

@@ -30,7 +30,7 @@ suite =
             \_ ->
                 x____replace me____x
                     |> expectDecodesTo
-                        (Pipeline.decode Name
+                        (Decode.succeed Name
                             |> Pipeline.required "first" Decode.string
                             |> Pipeline.required "last" Decode.string
                         )
@@ -39,7 +39,7 @@ suite =
             \_ ->
                 x____replace me____x
                     |> expectDecodesTo
-                        (Pipeline.decode Name
+                        (Decode.succeed Name
                             |> Pipeline.required "first" Decode.string
                             |> Pipeline.optional "last" Decode.string "Doe"
                         )
@@ -48,7 +48,7 @@ suite =
             \_ ->
                 x____replace me____x
                     |> expectDecodesTo
-                        (Pipeline.decode Name
+                        (Decode.succeed Name
                             |> Pipeline.requiredAt [ "name", "first" ] Decode.string
                             |> Pipeline.requiredAt [ "name", "last" ] Decode.string
                         )
@@ -59,7 +59,7 @@ suite =
                 , years = x____replace me____x
                 }
                     |> expectDecodesTo
-                        (Pipeline.decode Mission
+                        (Decode.succeed Mission
                             |> Pipeline.required "description" Decode.string
                             |> Pipeline.optional "years" (Decode.map Just Decode.int) Nothing
                         )
@@ -70,10 +70,10 @@ suite =
         , test "If the value exists it will decode to a Just" <|
             \_ ->
                 { description = "Go where no man has gone before."
-                , years = x____replace me____x
+                , years = Nothing
                 }
                     |> expectDecodesTo
-                        (Pipeline.decode Mission
+                        (Decode.succeed Mission
                             |> Pipeline.required "description" Decode.string
                             |> Pipeline.optional "years" (Decode.map Just Decode.int) Nothing
                         )

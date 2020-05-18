@@ -16,18 +16,17 @@ me____x =
 
 x____replace : a -> b
 x____replace _ =
-    Debug.crash "FILL IN THE BLANK"
+    Debug.todo "FILL IN THE BLANK"
 
 
 blankDecoder : Decode.Decoder a
 blankDecoder =
-    -- Decode.fail "Fill in the blankDecoder to make this test pass."
-    Decode.andThen (\a -> Debug.crash "Fill in the blank") (Decode.succeed "")
+    Decode.fail "Fix this decoder"
 
 
 blankCompositeDecoder : Decode.Decoder a -> Decode.Decoder b
 blankCompositeDecoder nestedDecoder =
-    Decode.andThen (\a -> Debug.crash "Fill in the blank") (Decode.succeed "")
+    Decode.andThen (\a -> Debug.todo "Fill in the blank") (Decode.succeed "")
 
 
 testDecodesTo : String -> Decode.Decoder a -> String -> a -> Test
