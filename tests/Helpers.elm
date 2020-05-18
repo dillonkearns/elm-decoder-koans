@@ -21,7 +21,7 @@ x____replace _ =
 
 blankDecoder : Decode.Decoder a
 blankDecoder =
-    Decode.fail "Fix this decoder"
+    Decode.fail "Replace the blankDecoder to solve this koan."
 
 
 blankCompositeDecoder : Decode.Decoder a -> Decode.Decoder b
@@ -38,6 +38,11 @@ testDecodesTo description decoder jsonString decodesTo =
 
 
 expectDecodesTo : Decode.Decoder a -> String -> a -> Expect.Expectation
-expectDecodesTo decoder jsonString decodesTo =
-    Decode.decodeString decoder jsonString
-        |> Expect.equal (Ok decodesTo)
+expectDecodesTo decoder jsonString expectedValue =
+    case Decode.decodeString decoder jsonString of
+        Ok decoded ->
+            decoded
+                |> Expect.equal expectedValue
+
+        Err error ->
+            Expect.fail <| Decode.errorToString error
