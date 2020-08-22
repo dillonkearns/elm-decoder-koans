@@ -23,10 +23,6 @@ suite =
             \_ ->
                 True
                     |> expectDecodesTo blankDecoder "true"
-        , test "Or Floats with Decode.float" <|
-            \_ ->
-                123.456
-                    |> expectDecodesTo blankDecoder "123.456"
         , test "Strings are valid JSON and parse with Decode.string" <|
             \_ ->
                 "Hello"
